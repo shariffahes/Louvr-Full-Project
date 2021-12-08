@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exhibition</title>
-</head>
-<body>
-    <header>
-        <%- include("../public/partials/navBar.html") %>
-    </header>
+  </head>
+  <body>
+    <header><%- include("../public/partials/navBar.html") %></header>
+
     <section>
-        <div style="height: 800px;"></div>
+      <div class="grid-container">
+        <% for(var i=0; i < data.length; i++) { %>
+        <div class="grid-item exhibition1">
+          <h5 class="title"><%= data[i].title %></h5>
+          <input value="Book Now" type="button" class="button" />
+          <div class="details">
+            <p class="subtitle"><%= data[i].startDate %> - <%= data[i].endDate %></p>
+          </div>
+        </div>
+        <% } %>
+      </div>
     </section>
-    <footer>
-        <%- include("../public/partials/footer.html")%>
-    </footer>
-</body>
+
+    <footer><%- include("../public/partials/footer.html")%></footer>
+  </body>
 </html>
