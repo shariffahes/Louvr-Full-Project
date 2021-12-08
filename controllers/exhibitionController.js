@@ -5,8 +5,8 @@ const index = async (req, res) => {
    res.render("../views/exhibitions.ejs",{data: r});
 };
 
-const main = (res,req) => {
-    console.log("ff");
+const main = (req,res) => {
+    res.render("../views/home.ejs");
 };
 
 module.exports = { index, main};
