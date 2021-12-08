@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "61b09b6caa41016886909f0a"
+  },
+  "title": "whereer",
+  "endDate": {
+    "$date": "2020-12-31T22:00:00Z"
+  },
+  "price": 10,
+  "slogan": "hi",
+  "startDate": {
+    "$date": "2019-12-31T22:00:00Z"
+  },
+  "thumbNail": "hello",
+  "totalRegistered": 20,
+  "roomLocation": "upstairs"
+},{
+  "_id": {
+    "$oid": "61b0a806aa41016886909f0f"
+  },
+  "title": "sharif",
+  "slogan": "i am sharif",
+  "thumbNail": "sharif",
+  "startDate": {
+    "$date": "2020-04-03T21:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-04-03T21:00:00Z"
+  },
+  "price": 10,
+  "totalRegistered": 200,
+  "roomLocation": "downstariss"
+}]
