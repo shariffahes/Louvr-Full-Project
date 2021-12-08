@@ -10,10 +10,11 @@ const app = express();
 app.set("view engine","ejs");
 
 app.use("/",homeRouter);
-// app.use("/exhibition", exhibitionRouter);
-// app.use("/visit", visitRouter);
-// app.use("/about-us", aboutUsRouter);
-// app.use("/user",user);
+app.use("/exhibition", exhibitionRouter);
+app.use("/visit", visitRouter);
+app.use("/about-us", aboutUsRouter);
+app.use("/user",user);
+
 app.use(express.static(__dirname + "/public/html"));
 app.use(express.static(__dirname + "/public/styles"));
 

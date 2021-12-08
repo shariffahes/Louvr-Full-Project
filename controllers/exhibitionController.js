@@ -4,4 +4,7 @@ const Exhibition = require("../models/Exhibition");
    const r =  await Exhibition.count({});
 };
 
-module.exports = index;
+const exhibition_list = async (req, res) => {
+    console.log("found me");
+}
+module.exports = {index, exhibition_list};
