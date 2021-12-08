@@ -1,140 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <%- include("../public/partials/navBar.html") %>
-    </header>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header><%- include("../public/partials/navBar.html") %></header>
     <section>
-        <div class="main">
-            <div class="first-section">
-                <h3 class="main-title">Welcome to the louvre</h3>
-                <p style="color: gold;">The louvre is open from 6:00am until 9:00pm</p>
-                <a href="./visit.html" class="input">Plan your Visit</a>
-            </div>
-
-            <div class="event-section">
-                <div class="header">
-                    <h1 class="section-header-title">Exhibition and Events</h1>
-                    <a href="./exhibition.html" style="color: black">See all Exhibitions</a>
-                </div>
-                <div class="grid-container">
-                    <div class="gridItem event1">
-                        <h3> Paris-Athens<br><span class="special-words"> The Birth <br> of the Modern Greece</span>
-                        </h3>
-                        <div class="details">
-                            <p>27 September 2021 - 4 July 2022</p>
-                            <input type="button" value="Book now" class="book-now-button" />
-                        </div>
-                        <img src="./assets/images/athena.jpg" class="image" />
-                    </div>
-                    <div class="gridItem event2">
-                        <h3>From Afar<br> <span class="special-words">Traveling Materials <br> and Object</span></h3>
-                        <div class='details'>
-                            <p>27 May 2020 - 24 Oct 2021</p>
-                            <input type="button" value="Book now" class="book-now-button" />
-                        </div>
-                        <img src="./assets/images/monaliza.jpg" class="image" />
-                    </div>
-                    <div class="gridItem event3">
-                        <h3>On stage<br> <span class="special-words"> Custom designs <br> from the Edmond de Rothschild
-                                Collection</span></h3>
-                        <div class='details'>
-                            <p>27 May 2020 - 24 Oct 2021</p>
-                            <input type="button" value="Book now" class="book-now-button" />
-                        </div>
-                        <img src="./assets/images/great-sphinx.jpg" class="image" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-section">
-                <h1 class="section-header-title">Explore Gallery</h1>
-                <div class='gallery-container'>
-                    <div class="gallery-item" id='item1'>
-                    </div>
-                    <div class="gallery-item" id="item2"></div>
-                    <div class="gallery-item" id="item3"></div>
-                    <div class="gallery-item" id="item4"></div>
-                    <div class="gallery-item" id="item5"></div>
-                    <div class="gallery-item" id="item6"></div>
-                    <div class="gallery-item" id="item7"></div>
-                    <div class="gallery-item" id="item8"></div>
-                </div>
-            </div>
-
-            <div class="email-section">
-                <div class="card">
-                    <div class="title">
-                        <h6>Subscribe to <br>our newsletter</h6>
-                    </div>
-                    <div class="content">
-                        <p>Stay up-to-date for all new events, exhibitions, and news</p>
-                        <input type="text" placeholder="Email" />
-                        <input type="button" value="submit" />
-                    </div>
-                </div>
-            </div>
-            <div class="selected-arts-section">
-                <h1 class="section-header-title">Selected arts</h1>
-                <div class="arts">
-                    <div class="art-item">
-                        <div class="preview">
-                            <img src="./assets/images/The-raft-of-the-medusa.jpg" alt="the raft of the medusa"
-                                class="image" width="100%" height="100%" />
-                        </div>
-                        <div class="details">
-                            <h2>Théodore Géricault</h2>
-                            <p>Painted in 19th century. It depicts the survivors (and the casualties) of
-                                the Medusa shipwreck calling for help when they see in the distance the
-                                outline of another ship that could save them.</p>
-                        </div>
-                    </div>
-                    <div class="art-item">
-                        <div class="details">
-                            <h2>The wedding at Cana</h2>
-                            <p> The Wedding at Cana is a story from the Old Testament of the Bible. The painting
-                                commissioned from the painter Veronese by the Benedictine monks of a Venice monastery
-                                has this as its theme. It is highly regarded for the way it depicts
-                                Venetian society at the time through a bible story.</p>
-                        </div>
-                        <div class="preview">
-                            <img src="./assets/images/the-wedding-cana.jpg" alt="the wedding cana" class="image"
-                                width="100%" height="100%" />
-                        </div>
-                    </div>
-                    <div class="art-item">
-                        <div class="preview">
-                            <img src="./assets/images/the-coronation-of-napoleon.jpg" alt="The Coronation of Napoleon"
-                                class="image" width="100%" height="100%" />
-                        </div>
-                        <div class="details">
-                            <h2>The Coronation of Napoleon</h2>
-                            <p>The Coronation of Napoleon is a work commissioned from the painter Jacques-Louis David,
-                                famous for his historical
-                                murals. Napoleon made a huge painting of it showing the Emperor at his consecration and
-                                the coronation of the Emperor
-                                Josephine. This painting depicts the splendor of the ceremony, where each person’s
-                                position was studied for aesthetic
-                                and political purposes.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer">
-                <h2 class='title'> The Louvre Museum </h2>
-                <a href="./about.html">About us</a>
-            </div>
+      <div class="main">
+        <div class="first-section">
+          <h3 class="main-title">Welcome to the louvre</h3>
+          <p style="color: gold">The louvre is open from 6:00am until 9:00pm</p>
+          <a href="./visit.html" class="input">Plan your Visit</a>
         </div>
+
+        <div class="event-section">
+          <div class="header">
+            <h1 class="section-header-title">Exhibition and Events</h1>
+            <a href="./exhibition.html" style="color: black"
+              >See all Exhibitions</a
+            >
+          </div>
+          <div class="grid-container">
+            <div class="gridItem event1">
+              <h3>
+                Paris-Athens<br /><span class="special-words">
+                  The Birth <br />
+                  of the Modern Greece</span
+                >
+              </h3>
+              <div class="details">
+                <p>27 September 2021 - 4 July 2022</p>
+                <input type="button" value="Book now" class="book-now-button" />
+              </div>
+              <img src="./assets/images/athena.jpg" class="image" />
+            </div>
+            <div class="gridItem event2">
+              <h3>
+                From Afar<br />
+                <span class="special-words"
+                  >Traveling Materials <br />
+                  and Object</span
+                >
+              </h3>
+              <div class="details">
+                <p>27 May 2020 - 24 Oct 2021</p>
+                <input type="button" value="Book now" class="book-now-button" />
+              </div>
+              <img src="./assets/images/monaliza.jpg" class="image" />
+            </div>
+            <div class="gridItem event3">
+              <h3>
+                On stage<br />
+                <span class="special-words">
+                  Custom designs <br />
+                  from the Edmond de Rothschild Collection</span
+                >
+              </h3>
+              <div class="details">
+                <p>27 May 2020 - 24 Oct 2021</p>
+                <input type="button" value="Book now" class="book-now-button" />
+              </div>
+              <img src="./assets/images/great-sphinx.jpg" class="image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-section">
+          <h1 class="section-header-title">Explore Gallery</h1>
+          <div class="gallery-container">
+            <div class="gallery-item" id="item1"></div>
+            <div class="gallery-item" id="item2"></div>
+            <div class="gallery-item" id="item3"></div>
+            <div class="gallery-item" id="item4"></div>
+            <div class="gallery-item" id="item5"></div>
+            <div class="gallery-item" id="item6"></div>
+            <div class="gallery-item" id="item7"></div>
+            <div class="gallery-item" id="item8"></div>
+          </div>
+        </div>
+
+        <div class="email-section">
+          <div class="card">
+            <div class="title">
+              <h6>Subscribe to <br />our newsletter</h6>
+            </div>
+            <div class="content">
+              <p>Stay up-to-date for all new events, exhibitions, and news</p>
+              <input type="text" placeholder="Email" />
+              <input type="button" value="submit" />
+            </div>
+          </div>
+        </div>
+        <div class="selected-arts-section">
+          <h1 class="section-header-title">Selected arts</h1>
+          <div class="arts">
+            <% for(var i=0; i < selectedArts.length; i++) { %>
+
+            <div class="art-item">
+              <% if(i%2==0){ %>
+              <div class="preview">
+                <img
+                  src="<%=selectedArts[i].thumbNail%>"
+                  alt="<%= selectedArts[i].title %>"
+                  class="image"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <div class="details">
+                <h2><%= selectedArts[i].title %></h2>
+                <p><%= selectedArts[i].description %></p>
+              </div>
+              <% }else{ %>
+              <div class="details">
+                <h2><%= selectedArts[i].title %></h2>
+                <p><%= selectedArts[i].description %></p>
+              </div>
+
+              <div class="preview">
+                <img
+                  src="<%=selectedArts[i].thumbNail%>"
+                  alt="<%= selectedArts[i].title %>"
+                  class="image"
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <% }%>
+            </div>
+
+            <% } %>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer>
-        <%- include("../public/partials/footer.html")%>
-    </footer>
-</body>
+    <footer><%- include("../public/partials/footer.html")%></footer>
+  </body>
 </html>

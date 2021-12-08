@@ -1,10 +1,4 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/Louvre")
-        .then(() => {
-            console.log("connected to the db.");
-      }).catch(err => {
-            console.log("error in connecting. ERR: "+err);
-        });
 
 const {Schema} = mongoose;
 const UserSchema = new Schema({

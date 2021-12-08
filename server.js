@@ -6,7 +6,13 @@ const exhibitionRouter = require("./routes/exhibition");
 const aboutUsRouter = require("./routes/about-us");
 const visitRouter = require("./routes/visit");
 const user = require("./routes/user");
-
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/Louvre")
+    .then(() => {
+        console.log("connected to the db.");
+    }).catch(err => {
+        console.log("error in connecting. ERR: " + err);
+    });
 const app = express();
 
 app.set('views', path.join(__dirname, '/views'));
