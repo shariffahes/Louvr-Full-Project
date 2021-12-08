@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Carter;
+    src: url('./assets/fonts/CarterOne-Regular.ttf');
+}
+@font-face {
+    font-family: Acme;
+    src: url('./assets/fonts/Acme-Regular.ttf');
+}
+@font-face {
+    font-family: Montserrat;
+    src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
