@@ -16,7 +16,7 @@ const ExhibitionSchema = new Schema({
     endDate: Date,
     price: Number,
     totalRegistered: Number,
-    rommLocation: String
+    roomLocation: String
 });
 
 const Exhibition = mongoose.model("exhibition", ExhibitionSchema);
