@@ -2,7 +2,7 @@
   "name": "final-project",
   "version": "1.0.0",
   "description": "final web project",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run": "nodemon server.js"
