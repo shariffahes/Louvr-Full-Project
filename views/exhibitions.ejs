@@ -15,7 +15,6 @@
     <section>
       <div class="grid-container">          
         <% for(var i=0; i < data.length; i++) { %>
-      <%console.log(data[i].thumbNail)%>
         <div class="grid-item" style="background-image: url(<%=data[i].thumbNail%>);">
           <h5 class="title"><%= data[i].title %></h5>
           <input value="Book Now" type="button" class="button" />

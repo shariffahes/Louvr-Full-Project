@@ -16,15 +16,17 @@
           <p style="color: gold">The louvre is open from 6:00am until 9:00pm</p>
           <a href="./visit.html" class="input">Plan your Visit</a>
         </div>
-
             <div class="event-section">
                 <div class="header">
                     <h1 class="section-header-title">Exhibition and Events</h1>
                     <a href="http://localhost:8081/exhibition" style="color: black">See all Exhibitions</a>
                 </div>
-                <div class="grid-container">
-                    <div class="gridItem event1">
-                        <h3> Paris-Athens<br><span class="special-words"> The Birth <br> of the Modern Greece</span>
+                <div class="grid-container"> 
+                    <%exhibitions.forEach((element,index) => {%>
+                    <div class="gridItem event<%=index+1%>">
+                        <h3> <%=element.title%><br><span class="special-words">
+                            <%=element.slogan %> 
+                        </span>
                         </h3>
                         <div class="details">
                             <p>27 September 2021 - 4 July 2022</p>
@@ -32,35 +34,8 @@
                         </div>
                         <img src="./assets/images/athena.jpg" class="image" />
                     </div>
+                <%})%>
                 </div>
-            </div>
-            <div class="gridItem event2">
-              <h3>
-                From Afar<br />
-                <span class="special-words"
-                  >Traveling Materials <br />
-                  and Object</span
-                >
-              </h3>
-              <div class="details">
-                <p>27 May 2020 - 24 Oct 2021</p>
-                <input type="button" value="Book now" class="book-now-button" />
-              </div>
-              <img src="./assets/images/monaliza.jpg" class="image" />
-            </div>
-            <div class="gridItem event3">
-              <h3>
-                On stage<br />
-                <span class="special-words">
-                  Custom designs <br />
-                  from the Edmond de Rothschild Collection</span
-                >
-              </h3>
-              <div class="details">
-                <p>27 May 2020 - 24 Oct 2021</p>
-                <input type="button" value="Book now" class="book-now-button" />
-              </div>
-              <img src="./assets/images/great-sphinx.jpg" class="image" />
             </div>
           </div>
         </div>
