@@ -8,8 +8,10 @@ const index = async (req, res) => {
 
 const main = async (req,res) => {
     //Selected Arts Rednering
-    const r = await SelectedArts.find({});
-    res.render("../views/home.ejs",{selectedArts: r});
+    const allArts = await SelectedArts.find({});
+    const highlightedExhibitions = await Exhibition.find({}).limit(3);
+    
+    res.render("../views/home.ejs", { selectedArts: allArts, exhibitions: highlightedExhibitions});
 };
 
 module.exports = { index, main};
