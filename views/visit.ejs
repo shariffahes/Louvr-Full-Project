@@ -1,21 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <%- include("../public/partials/navBar.html") %>
-    </header>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header><%- include("../public/partials/navBar.html") %></header>
     <section>
-        <div style="height: 800px;"></div>
+      <div class="covid-regulations" id="covid-section">
+        <h2 class="title">
+          Covid-19 regulations <i class="material-icons icons">masks</i>
+        </h2>
+        <div class="details">
+          <p>
+            Time-slot bookings are compulsory, including for free-admission
+            visitors. In accordance with government recommendations, all
+            visitors to the Louvre aged 12 years and two months or older must
+            show a Health Pass. All visitors aged 11 and over must wear face
+            masks.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/301jV-nldkE"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="admission-info" id="admission-section">
+        <h2 class="title">
+          Hours and Prices
+          <i class="material-icons icons">watch_later</i>
+        </h2>
+        <div class="content">
+          <div class="card opening-hours">
+            <h3>Opening Hours</h3>
+            <p>9:00 AM - 6:00 PM</p>
+            <p>Monday, Wednesday, Thursday, Friday, Saturday, Sunday</p>
+            <h3>Closed</h3>
+            <p>Tuesday</p>
+          </div>
+          <div class="card ticket-prices">
+            <h3>Ticket Prices</h3>
+            <p><span class="price-info">$17</span> for other visitors</p>
+            <p>
+              <span class="price-info discount">17$</span>
+              <span class="price-info">Free</span> for EEA residents aged
+              between 18 - 26 years old
+            </p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="map" id="map-section">
+        <h2 class="title">
+          Locate US
+          <i class="material-icons icons">place</i>
+        </h2>
+        <div class="details">
+          <p>
+            The Pyramid is the main entrance to the museum. At peak times, you
+            can access the museum via the Carrousel and Porte des Lions
+            entrances.
+          </p>
+          <div class="map-preview">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10499.496405115677!2d2.337644!3d48.8606111!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb975fcfa192f84d4!2sLouvre%20Museum!5e0!3m2!1sen!2slb!4v1635166621928!5m2!1sen!2slb"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </section>
-    <footer>
-        <%- include("../public/partials/footer.html")%>
-    </footer>
-</body>
+    <footer><%- include("../public/partials/footer.html")%></footer>
+  </body>
 </html>
