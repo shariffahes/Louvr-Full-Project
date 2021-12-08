@@ -1,0 +1,141 @@
+.visit-page .material-icons {
+    visibility: hidden;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    background-image: url('./assets/images/louvre-visit.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+    padding-bottom: 15px;
+    align-items: flex-start;
+}
+
+.header h1, .contact-us-page .header h1 {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 50%;
+}
+.title{
+    display: flex;
+    align-items: center;
+    letter-spacing: 3px;
+    margin: 20px 0px 2px 15px;
+    font-size: 28px;
+}
+.navBar {
+    background-color: black;
+}
+.covid-regulations .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 14px;
+    min-width: 100px;
+}
+.covid-regulations .details iframe {
+    flex:  0.4;
+    min-height: 200px;
+}
+.covid-regulations .details p {
+    flex: 0.5;  
+}
+.admission-info {
+    background-color: rgb(240,240,240);
+    padding: 5px;
+}
+.admission-info .content {
+    display: flex;
+    padding: 14px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card {
+    background-color: white;
+    margin: 3px;
+    padding: 8px;
+    min-height: 150px;
+}
+.opening-hours {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.ticket-prices {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.price-info {
+    margin-right: 3px;
+    font-size: 18px;
+}
+.discount {
+    text-decoration: line-through 2px red;
+}
+
+.map .details {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.map .details p {
+    width: 40%;
+}
+.map-preview {
+    height: 250px;
+    width: 45%;
+    background-color: green;
+}
+.map-preview iframe {
+    height: 100%;
+    width: 100%;
+}
+.icons {
+    margin-left: 10px;
+    font-size: 34px;
+}
+@media screen and (max-width: 600px) {
+      .visit-page .covid-regulations .details{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .covid-regulations .details iframe {
+        margin-top: 20px;
+        width: 90% !important;
+    }
+    .admission-info .content {
+        flex-direction: column;
+    }
+    .visit-page .admission-info .card {
+        width: 90%;
+        margin-bottom: 8px;
+    }
+    .map .details{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .map .details p {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+    .map-preview {
+        width: 90%;
+        background-color: green;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .visit-page .material-icons {
+        visibility: visible;
+    }
+}
