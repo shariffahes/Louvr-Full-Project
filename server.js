@@ -15,11 +15,8 @@ app.set("view engine","ejs");
 app.use("/",homeRouter);
 app.use("/exhibition", exhibitionRouter);
 app.use("/visit", visitRouter);
-// app.get("/visit", (req, res) => {
-//     res.render(__dirname + "/views/visit.ejs");
-// });
-// app.use("/about-us", aboutUsRouter);
-// app.use("/user",user);
+app.use("/about-us", aboutUsRouter);
+app.use("/user",user);
 
 app.use(express.static(__dirname + "/public/html"));
 app.use(express.static(__dirname + "/public/styles"));

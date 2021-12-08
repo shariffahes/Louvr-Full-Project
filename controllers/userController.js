@@ -1,7 +1,10 @@
 const User = require("../models/User");
 
-const index =  (req,res) => {
-    console.log("test");
+const login =  (req,res) => {
+    console.log("login");
 };
+const signUp = (req,res) => {
+    console.log("signUp");
+}
 
-module.exports = index;
+module.exports = {login,signUp};
