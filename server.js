@@ -5,7 +5,7 @@ const app = express();
 app.set("view engine","ejs");
 
 app.get("/", (req,res) => {
-    res.render(__dirname+"/views/visit");
+    res.render(__dirname+"/views/home");
 })
 
 
