@@ -13,11 +13,9 @@
     <header><%- include("../public/partials/navBar.html") %></header>
 
     <section>
-      <div class="grid-container">          <% console.log(data[0]);%>
-
+      <div class="grid-container">          
         <% for(var i=0; i < data.length; i++) { %>
-          <% console.log(data[i]);%>
-        <div class="grid-item exhibition1">
+        <div class="grid-item" style="background-image: url(<%=data[i].thumbNail%>);">
           <h5 class="title"><%= data[i].title %></h5>
           <input value="Book Now" type="button" class="button" />
           <div class="details">

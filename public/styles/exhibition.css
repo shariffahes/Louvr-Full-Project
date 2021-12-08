@@ -17,24 +17,7 @@
 .grid-item:hover {
     transform: scale(1.02,1.02);
 }
-.exhibition1 {
-    background-image: url(./assets/images/athena.jpg);
-}
-.exhibition-page .exhibition2 {
-    background-image: url(./assets/images/The-raft-of-the-medusa.jpg);
-}
-.exhibition3 {
-    background-image: url(./assets/images/great-sphinx.jpg);
-}
-.exhibition4 {
-    background-image: url(./assets/images/the-wedding-cana.jpg);
-}
-.exhibition5 {
-    background-image: url(./assets/images/monaliza.jpg);
-}
-.exhibition6 {
-    background-image: url(./assets/images/sculpture.jpg);
-}
+
 .grid-item {
 position: relative;
 }
