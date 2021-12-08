@@ -10,7 +10,7 @@ const main = async (req,res) => {
     //Selected Arts Rednering
     const allArts = await SelectedArts.find({});
     const highlightedExhibitions = await Exhibition.find({}).limit(3);
-    
+
     res.render("../views/home.ejs", { selectedArts: allArts, exhibitions: highlightedExhibitions});
 };
 

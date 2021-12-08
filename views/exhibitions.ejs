@@ -19,7 +19,9 @@
           <h5 class="title"><%= data[i].title %></h5>
           <input value="Book Now" type="button" class="button" />
           <div class="details">
-            <p class="subtitle"><%= data[i].startDate %> - <%= data[i].endDate %></p>
+            <p class="subtitle"><%= data[i].startDate.toLocaleString('default', {day: '2-digit',month: 'long', year: 'numeric' }); %> - 
+              <%= data[i].endDate.toLocaleString('default', {day: '2-digit',month: 'long', year: 'numeric' }); %>
+            </p>
           </div>
         </div>
         <% } %>
