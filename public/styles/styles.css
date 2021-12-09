@@ -351,8 +351,8 @@ background-image: linear-gradient( rgba(255, 255, 255,0),
 .page-not-found{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: end;
+    justify-content: flex-end;
+    align-items: flex-end;
     padding: 10%;
     background-image:   linear-gradient(
       rgba(255, 255, 255,0), 
@@ -360,7 +360,6 @@ background-image: linear-gradient( rgba(255, 255, 255,0),
     );
     background-size: cover;
     padding-bottom: 13%;
-    height: 100%;
     background-repeat: no-repeat;
     background-size: contain;
     color: rgba(228, 228, 228, 0.959);

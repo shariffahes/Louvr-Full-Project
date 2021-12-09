@@ -1,0 +1,42 @@
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: tomato;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+a {
+  color: #1e90ff;
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    padding: 5px;
+    margin: 5px;
+}
+
+.counter { 
+    justify-content: center; 
+    align-items: center; 
+    display: flex; 
+    height: 100%; 
+    text-align: center; 
+}
+
+.counting {
+  padding: 5px;
+}
+
+.total {
+  padding: 5px;
+}
