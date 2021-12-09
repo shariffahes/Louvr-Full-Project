@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about_us.css">
+    <title>About US</title>
+</head>
+
+<body>
+    <div class="contact-us-page">
+    <header>
+        <%- include("../public/partials/navBar.html") %>
+    </header>
+        <div class="header">
+            <h1 class="main-title">About Us</h1>
+        </div>
+        <div class="info-section">
+            <h1 class="section-header-title">Louvre History</h1>
+            <p>
+                Louvre is one of the most famous museums. Located in Paris, France. The glass pyramid is the most iconic view of the museum. The most famous painting for leonardo decaprio "The monaliza" is on show there.
+            </p>
+        </div>
+        <div class="contact-section">
+            <h1 class="section-header-title">Give a feedback</h1>
+            <div class="card">
+                <form>
+                    <label for="firstName">First Name: *</label>
+                    <input type="text" id="firstName" placeholder="eg. Sharif" />
+                    <label for="lastName">Last Name: *</label>
+                    <input type="text" id="lastName" placeholder="eg. Fahes" />
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" placeholder="eg. Sharif" />
+                    <label for="phone">phone nb: </label>
+                    <input type="tel" id="phone" placeholder="eg. 70249036" />
+                    <input type="button" value="submit" />
+                </form>
+            </div>
+        </div>
+
+        <div class="donate-section">
+            <h3>We need your support</h3>
+            <div class="details">
+                <p>Your support will help us spread knowledge everywhere through our e-learn louvre program</p>
+                <input value="Donate" type="button" />
+            </div>
+        </div>
+    <footer>
+        <%- include("../public/partials/footer.html")%>
+    </footer>
+    </div>
+
+</body>
+
+</html>
