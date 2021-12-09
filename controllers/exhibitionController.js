@@ -12,32 +12,27 @@ const main = async (req,res) => {
     const allArts = await SelectedArts.find({});
     const highlightedExhibitions = await Exhibition.find({}).limit(3);
 
-    const url = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=painting&departmentIds=11"
+    const url = "https://openaccess-api.clevelandart.org/api/artworks?limit=30&dimensions_max=100,300,300"
     const responseIDs = await got(url);
     const responseJSON = JSON.parse(responseIDs.body);
-    const IDS = responseJSON.objectIDs;
-    const max = responseJSON.total-1;
-    console.log(max);
-    const imagesResults = [];
-    
+    const results = responseJSON.data;
+    const imagesURLs = [];
+
     for(var i=0;i<9;i++){
-        const ran = Math.floor((Math.random()*max+0));
-        const id = IDS[ran];
-         const tempURL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
-         const responseURL = await got(tempURL);
-         const responseURLJSON = JSON.parse(responseURL.body);
-         const imageAPIs = responseURLJSON.primaryImage;
+        const ran = Math.floor((Math.random()*39+0));
+         const imageAPIs = results[ran]?.images?.web?.url;
          console.log(imageAPIs);
          if(imageAPIs!=''){
-            imagesResults[i]=imageAPIs;
+             imagesURLs[i]=imageAPIs;
          }else{
+             console.log("not found");
              i--;
          }
     }
-    // const imagestoEJS = JSON.parse(imagesResults);
+    
 
     //AJAX 
-    res.render("../views/home.ejs", { selectedArts: allArts, exhibitions: highlightedExhibitions, galleryAPI: imagesResults});
+    res.render("../views/home.ejs", { selectedArts: allArts, exhibitions: highlightedExhibitions, galleryAPI: imagesURLs});
 };
 
 module.exports = { index, main};

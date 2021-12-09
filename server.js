@@ -6,6 +6,7 @@ const exhibitionRouter = require("./routes/exhibition");
 const aboutUsRouter = require("./routes/about-us");
 const visitRouter = require("./routes/visit");
 const user = require("./routes/user");
+
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/Louvre")
     .then(() => {

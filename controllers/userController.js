@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
+const getImageURL = require("../imageKit");
 const saltRounds = 8;
-
 
 const login =  (_,res) => {
     res.render("../views/user.ejs",{login: true});
@@ -56,4 +56,5 @@ const authenticatUser = async (req,res) => {
        console.log("the email is incorrect");
    }
 };
+
 module.exports = {login,signUp, createUser, authenticatUser};
