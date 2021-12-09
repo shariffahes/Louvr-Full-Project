@@ -24,7 +24,9 @@
                 <div class="grid-container"> 
                     <%exhibitions.forEach((element,index) => {%>
                     <div class="gridItem event<%=index+1%>">
-                        <h3> <%=element.title%><br><span class="special-words">
+                        <h3> <%=element.title%>
+                            <br>
+                            <span class="special-words">
                             <%=element.slogan %> 
                         </span>
                         </h3>
@@ -50,14 +52,9 @@
         <div class="gallery-section">
           <h1 class="section-header-title">Explore Gallery</h1>
           <div class="gallery-container">
-            <div class="gallery-item" id="item1"></div>
-            <div class="gallery-item" id="item2"></div>
-            <div class="gallery-item" id="item3"></div>
-            <div class="gallery-item" id="item4"></div>
-            <div class="gallery-item" id="item5"></div>
-            <div class="gallery-item" id="item6"></div>
-            <div class="gallery-item" id="item7"></div>
-            <div class="gallery-item" id="item8"></div>
+            <% for(var i=0; i < galleryAPI.length; i++) { %>
+            <div class="gallery-item" id="item<%=i%>" style="background-image:url(<%=galleryAPI[i]%>)"></div>
+            <% }%>
           </div>
         </div>
 
