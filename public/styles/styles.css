@@ -1,21 +1,22 @@
 @font-face {
     font-family: Carter;
-    src: url('../fonts/CarterOne-Regular.ttf');
+    src: url('arterOne-Regular.ttf');
 }
 @font-face {
     font-family: Acme;
-    src: url('../fonts/Acme-Regular.ttf');
+    src: url('Acme-Regular.ttf');
 }
 @font-face {
     font-family: Montserrat;
-    src: url('../fonts/Montserrat-Regular.ttf');
+    src: url('Montserrat-Regular.ttf');
 }
+
 * {
     margin: 0;
     font-family: Acme;
 }
 p{
-    font-family: Montserrat;
+    font-family: Montserrat cursive;
     font-size: 14px;
 }
 a{

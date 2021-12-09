@@ -11,7 +11,7 @@
     <header><%- include("../public/partials/navBar.html") %></header>
     <section>
       <div class="main">
-        <div class="first-section">
+        <div class="first-section" >
           <h3 class="main-title">Welcome to the louvre</h3>
           <p style="color: gold">The louvre is open from 6:00am until 9:00pm</p>
           <a href="./visit.html" class="input">Plan your Visit</a>
@@ -31,10 +31,17 @@
                         </span>
                         </h3>
                         <div class="details">
-                            <p> dddddd</p>
+                            <p>
+                                <%=
+                                    element.startDate.toLocaleString('default', {day: '2-digit',month: 'long', year: 'numeric'  });
+                                %> -
+                                <%= 
+                                    element.endDate.toLocaleString('default', {day: '2-digit',month: 'long', year: 'numeric' });
+                                %>
+                            </p>
                             <input type="button" value="Book now" class="book-now-button" />
                         </div>
-                        <img src="./assets/images/athena.jpg" class="image" />
+                        <img src="<%=element.thumbNail%>" class="image" />
                     </div>
                 <%})%>
                 </div>
