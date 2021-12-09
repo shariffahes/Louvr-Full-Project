@@ -2,14 +2,14 @@
   "_id": {
     "$oid": "61b09b6caa41016886909f0a"
   },
-  "title": "whereer",
+  "title": "The Story of The Boy",
   "endDate": {
-    "$date": "2020-12-31T22:00:00Z"
+    "$date": "2022-01-12T22:00:00Z"
   },
   "price": 10,
-  "slogan": "hi",
+  "slogan": "Where his face was lost",
   "startDate": {
-    "$date": "2019-12-31T22:00:00Z"
+    "$date": "2021-12-31T22:00:00Z"
   },
   "totalRegistered": 20,
   "roomLocation": "upstairs",
@@ -19,13 +19,13 @@
   "_id": {
     "$oid": "61b0a806aa41016886909f0f"
   },
-  "title": "sharif",
-  "slogan": "i am sharif",
+  "title": "The Story of The Ocean",
+  "slogan": "Girl in Water",
   "startDate": {
-    "$date": "2020-04-03T21:00:00Z"
+    "$date": "2022-04-03T21:00:00Z"
   },
   "endDate": {
-    "$date": "2022-04-03T21:00:00Z"
+    "$date": "2022-04-10T21:00:00Z"
   },
   "price": 10,
   "totalRegistered": 200,
@@ -36,13 +36,13 @@
   "_id": {
     "$oid": "61b0f6601c27feffd3746480"
   },
-  "title": "pero",
+  "title": "The Ruins",
   "slogan": "history that talks",
   "startDate": {
-    "$date": "2022-01-08T22:00:00Z"
+    "$date": "2021-05-08T22:00:00Z"
   },
   "endDate": {
-    "$date": "2022-02-07T22:00:00Z"
+    "$date": "2022-03-21T22:00:00Z"
   },
   "price": 44.5,
   "totalRegistered": 10,
@@ -53,7 +53,7 @@
   "_id": {
     "$oid": "61b0f7261c27feffd3746481"
   },
-  "title": "History",
+  "title": "The Past is the Present",
   "slogan": "The past in present",
   "startDate": {
     "$date": "2022-03-02T22:00:00Z"
@@ -66,4 +66,106 @@
   "roomLocation": "101",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition4",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition4"
+},{
+  "_id": {
+    "$oid": "61b256192e098af5a7682328"
+  },
+  "title": "The Pharaoh",
+  "slogan": "Egyptian Mystery",
+  "startDate": {
+    "$date": "2022-01-01T22:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-01-05T21:00:00Z"
+  },
+  "price": 30,
+  "totalRegistered": 22,
+  "roomLocation": "007",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition7",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition7"
+},{
+  "_id": {
+    "$oid": "61b258a02e098af5a7682329"
+  },
+  "title": "Athens",
+  "slogan": "The Capital of the Nations",
+  "startDate": {
+    "$date": "2022-05-05T22:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-06-06T21:00:00Z"
+  },
+  "price": 100,
+  "totalRegistered": 40,
+  "roomLocation": "1007",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition5",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition5"
+},{
+  "_id": {
+    "$oid": "61b2590a2e098af5a768232a"
+  },
+  "title": "The Last Dance",
+  "slogan": "Roman History",
+  "startDate": {
+    "$date": "2022-02-12T22:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-03-08T21:00:00Z"
+  },
+  "price": 10,
+  "totalRegistered": 84,
+  "roomLocation": "2101",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition6",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition6"
+},{
+  "_id": {
+    "$oid": "61b2595a2e098af5a768232b"
+  },
+  "title": "Who Stole The Lisa",
+  "slogan": "Mona Lisa",
+  "startDate": {
+    "$date": "2022-04-17T22:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-04-17T23:00:00Z"
+  },
+  "price": 75,
+  "totalRegistered": 200,
+  "roomLocation": "001",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition8",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition8"
+},{
+  "_id": {
+    "$oid": "61b25ceb2e098af5a768232c"
+  },
+  "title": "Pharaoh of the Two Lands",
+  "slogan": "The African Story of the Kings of Napata",
+  "startDate": {
+    "$date": "2022-05-31T22:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-06-30T23:00:00Z"
+  },
+  "price": 17,
+  "totalRegistered": 24,
+  "roomLocation": "504",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition10",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition10"
+},{
+  "_id": {
+    "$oid": "61b25d262e098af5a768232d"
+  },
+  "title": "From Afar",
+  "slogan": "Travel through time",
+  "startDate": {
+    "$date": "2022-10-10T22:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-11-11T23:00:00Z"
+  },
+  "price": 45,
+  "totalRegistered": 700,
+  "roomLocation": "1001",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition9",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition9"
 }]
