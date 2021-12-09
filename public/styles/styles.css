@@ -241,42 +241,37 @@ table td {
 }
 .gallery-section #item1 {
     background-color: blue;
-    background-image: url('https://images.unsplash.com/photo-1603966187872-3a0f1432057e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
     grid-area: 1 / 1 / 2 / 3;
 }
 .gallery-section #item2 {
     background-color: cadetblue;
-    background-image: url('https://images.unsplash.com/photo-1593180318097-80afc542cfff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80');
     height: 600px;
     grid-area: 1 / 3 / 3 / 4;
 }
 .gallery-section #item3 {
     background-color: darkblue;
-    background-image: url('https://images.unsplash.com/photo-1545990569-98afd2e72852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
     grid-area: 1 / 4 / 2 / 5;
 }
 .gallery-section #item4 {
     background-color: rebeccapurple;
-    background-image: url('https://images.unsplash.com/photo-1531777319985-9dca28eeae64?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2038&q=80');
 }
 .gallery-section #item5 {
     background-color: darkgoldenrod;
     grid-area: 2 / 2 / 4 / 3;
     background-image: linear-gradient( rgba(255, 255, 255,0), 
-      rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581010864434-6ff1a9a2867e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80');
+      rgba(0, 0, 0, 0.6));
     height: 600px;
 }
 .gallery-section #item6 {
     background-color: aqua;
-    background-image:  url('https://images.unsplash.com/photo-1564586453511-3ff0c573ff4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
 }
 .gallery-section #item7 {
     background-image: linear-gradient( rgba(255, 255, 255,0.2), 
-      rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1562754193-ba39a22c110b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2040&q=80');
+      rgba(0, 0, 0, 0.8));
 }
 .gallery-section #item8 {
 background-image: linear-gradient( rgba(255, 255, 255,0), 
-      rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1566998398519-7f10a1fa3af4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+      rgba(0, 0, 0, 0.6));
  background-color: cornflowerblue;
  grid-column: 3 / 5;
 }
