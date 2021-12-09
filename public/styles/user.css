@@ -20,11 +20,20 @@ body {
     height: 50vh;
 }
 label {
-  font-size: 18px;
+  font-size: 20px;
+  padding-right: 5px;
 }
+
 .flex-user{
-    background-color: gold;
-    padding: 2%;
-    border-radius: 5px;
-    box-shadow: 5px 5px 100px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: fit-content;
+  background-color: gold;
+  padding: 2%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 100px black;
+  
 }
