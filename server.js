@@ -31,6 +31,11 @@ app.use(express.static(__dirname + "/public/html"));
 app.use(express.static(__dirname + "/public/styles"));
 app.use(express.static(__dirname + "/public/fonts"));
 app.use(express.static(__dirname + "/public/images"));
+
+app.use((_,res) => {
+    res.status(404).sendFile(__dirname+"/public/html/404.html");
+});
+
 app.listen(8081, () => {
     console.log("listening to server");
 });
