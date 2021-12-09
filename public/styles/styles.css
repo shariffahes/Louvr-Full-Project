@@ -278,7 +278,7 @@ background-image: linear-gradient( rgba(255, 255, 255,0),
 }
 
 .email-section {
-    background-image: url(./assets/images/louvre.jpg);
+    background-image: url(louvre.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -414,6 +414,7 @@ background-image: linear-gradient( rgba(255, 255, 255,0),
     
     .email-section .card {
         width: 90%;
+        
     }
 
     .gallery-container #item2 {
