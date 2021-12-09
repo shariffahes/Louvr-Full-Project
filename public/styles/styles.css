@@ -347,6 +347,43 @@ background-image: linear-gradient( rgba(255, 255, 255,0),
     justify-content: space-evenly;
 }
 
+/* 404 */
+.page-not-found{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    padding: 10%;
+    background-image:   linear-gradient(
+      rgba(255, 255, 255,0), 
+      rgba(0, 0, 0, 0.6)
+    );
+    background-size: cover;
+    padding-bottom: 13%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: rgba(228, 228, 228, 0.959);
+    text-align: end;
+    background-color: black;
+}
+
+.page-not-found h1{
+    margin-right: 20%;
+    letter-spacing: 15px;
+    
+    font-size: 120px;
+    text-shadow: 10px 10px 10px rgba(109, 93, 4, 0.575);
+}
+
+.page-not-found h2{
+    text-align: center;
+    margin-right: 17%;
+    text-shadow: 2px 2px 2px rgba(109, 93, 4, 0.801);
+}
+
+
+
 @media screen and (max-width: 600px) {
     nav{
         display: none;
