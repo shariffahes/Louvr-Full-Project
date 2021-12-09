@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="signup.css" />
+</head>
+
+<body>
+<header>
+<%-include("../public/partials/navBar.html")%>
+</header>
+<%if(login) {%>
+    <div class="signup-page">
+        <h1> Welcome Back...</h1>
+        <div class="flex-signup">
+            <form class="forms" action="http://localhost:8081/user/authenticate" method="post" enctype="application/json">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required placeholder="eg. john@mail.com" />
+                <br />
+                <br />
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required placeholder="eg. your password" />
+                <br />
+                <br />
+                <input type="submit" class="button" value="login">
+             
+            </form>
+        </div>
+    </div>
+    <%} else if(signup){ %>
+    <div class="signup-page">
+        <h1>Register</h1>
+        <div class="flex-signup">
+            <form class="forms" method="POST" action="http://localhost:8081/user/create" 
+            enctype="application/json>">
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" id="fname" required placeholder="eg. John" />
+                <br />
+                <br />
+    
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname" required placeholder="eg. Sims" />
+                <br />
+                <br />
+
+                <label for="userName">User Name</label>
+                <input type="text" name="userName" id="userName" required placeholder="eg. Sims" />
+                <br />
+                <br />
+    
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required placeholder="eg. john@mail.com" />
+                <br />
+                <br />
+    
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required placeholder="eg. your password" />
+                <br />
+                <br />
+
+                <label for="birthDate">Date of birth</label>
+                <input type="date" name="birthDate" id="birthDate">
+                <br>
+                <br>
+    
+            <input type="submit" class="button" value="Sign up">
+            </form>
+        </div>
+    </div>
+    <%}%>
+<footer>
+    <%-include("../public/partials/footer.html")%>
+</footer>
+    
+</body>
+
+</html>

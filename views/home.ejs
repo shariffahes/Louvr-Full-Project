@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="styles.css" />
+    <base href="http://localhost:8081">
   </head>
   <body>
     <header><%- include("../public/partials/navBar.html") %></header>
@@ -14,12 +15,12 @@
         <div class="first-section" >
           <h3 class="main-title">Welcome to the louvre</h3>
           <p style="color: gold">The louvre is open from 6:00am until 9:00pm</p>
-          <a href="./visit.html" class="input">Plan your Visit</a>
+          <a href="./visit" class="input">Plan your Visit</a>
         </div>
             <div class="event-section">
                 <div class="header">
                     <h1 class="section-header-title">Exhibition and Events</h1>
-                    <a href="http://localhost:8081/exhibition" style="color: black">See all Exhibitions</a>
+                    <a href="/exhibition" style="color: black">See all Exhibitions</a>
                 </div>
                 <div class="grid-container"> 
                     <%exhibitions.forEach((element,index) => {%>
