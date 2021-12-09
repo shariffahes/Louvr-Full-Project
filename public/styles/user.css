@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: black;
+}
+.user-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    background-image:   linear-gradient(
+      rgba(255, 255, 255,0), 
+      rgba(0, 0, 0, 0.6)
+    ), url('about-us.jpg');
+    background-size: cover;
+    padding-bottom: 13%;
+    height: 50vh;
+}
+label {
+  font-size: 18px;
+}
+.flex-user{
+    background-color: gold;
+    padding: 2%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 100px black;
+}

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/signup.css" />
+    <link rel="stylesheet" href="/user.css" />
 </head>
 
 <body>
@@ -16,9 +16,9 @@
 </header>
 <section>
 <%if(login) {%>
-    <div class="signup-page">
+    <div class="user-page">
         <h1> Welcome Back...</h1>
-        <div class="flex-signup">
+        <div class="flex-user">
             <form class="forms" action="http://localhost:8081/user/authenticate" method="post" enctype="application/json">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" required placeholder="eg. john@mail.com" />
@@ -34,9 +34,9 @@
         </div>
     </div>
     <%} else if(signup){ %>
-    <div class="signup-page">
+    <div class="user-page">
         <h1>Register</h1>
-        <div class="flex-signup">
+        <div class="flex-user">
             <form class="forms" method="POST" action="http://localhost:8081/user/create" 
             enctype="application/json>">
                 <label for="fname">First Name</label>

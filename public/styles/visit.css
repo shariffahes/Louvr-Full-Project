@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     height: 300px;
-    background-image: url('./assets/images/louvre-visit.jpg');
+    background-image: url('louvre-visit.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
