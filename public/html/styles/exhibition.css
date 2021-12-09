@@ -1,0 +1,100 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2px;
+}
+.grid-item {
+    background-color: blue;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    border-color: black;
+    border-width: 10px;
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.grid-item:hover {
+    transform: scale(1.02,1.02);
+}
+.exhibition1 {
+    background-image: url(./assets/images/athena.jpg);
+}
+.exhibition-page .exhibition2 {
+    background-image: url(./assets/images/The-raft-of-the-medusa.jpg);
+}
+.exhibition3 {
+    background-image: url(./assets/images/great-sphinx.jpg);
+}
+.exhibition4 {
+    background-image: url(./assets/images/the-wedding-cana.jpg);
+}
+.exhibition5 {
+    background-image: url(./assets/images/monaliza.jpg);
+}
+.exhibition6 {
+    background-image: url(./assets/images/sculpture.jpg);
+}
+.grid-item {
+position: relative;
+}
+.grid-item .details{
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    color: #fff;
+}
+
+.grid-item .button {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    height: 35px;
+    left: 0px;
+    right: 0px;
+    background-color: green;
+    border-width: 0;
+    color: #fff;
+    font-size: 19px;
+}
+
+.grid-item .title {
+    position: absolute;
+    color: white;
+    top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    max-width: 70%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+.grid-container .content {   
+    font-size: 32px;
+    color: sienna;
+    padding: 20px;
+
+}
+.grid-container .details {   
+ border-color: black;
+ border-width: 10px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+ padding: 10px;
+}
+
+.grid-container .details .subtitle {
+    color: #fff;
+    font-size: 14px;
+    align-self: center;
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: auto;
+    }
+}
