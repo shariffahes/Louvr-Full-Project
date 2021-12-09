@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visit the louvre</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="visit.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="visit.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class="visit-page">
     <header><%- include("../public/partials/navBar.html") %></header>
     <section>
+      <div class="header">
+        <h1 class="main-title">Visit</h1>
+      </div>
+      <div class="navBar">
+        <a href="#covid-section" id="section1">Covid-19 regulations</a>
+        <a href="#admission-section" id="section2">Hours & prices</a>
+        <a href="#map-section" id="section3">Map & directions</a>
+      </div>
       <div class="covid-regulations" id="covid-section">
         <h2 class="title">
           Covid-19 regulations <i class="material-icons icons">masks</i>
@@ -81,5 +90,6 @@
       </div>
     </section>
     <footer><%- include("../public/partials/footer.html")%></footer>
+    </div>
   </body>
 </html>

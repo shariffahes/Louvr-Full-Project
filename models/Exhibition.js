@@ -5,7 +5,8 @@ const {Schema} = mongoose;
 const ExhibitionSchema = new Schema({
     title: String,
     slogan: String,
-    thumbNail: String,
+    largePreview: String,
+    smallPreview: String,
     startDate: Date,
     endDate: Date,
     price: Number,

@@ -3,8 +3,8 @@ const SelectedArts = require("../models/SelectedArts");
 const got = require("got");
 
 const index = async (req, res) => {
-   const r =  await Exhibition.find({});
-   res.render("../views/exhibitions.ejs",{data: r});
+   const exhibitions =  await Exhibition.find({});
+    res.render("../views/exhibitions.ejs", { data: exhibitions});
 };
 
 const main = async (req,res) => {
@@ -30,7 +30,6 @@ const main = async (req,res) => {
          }
     }
     
-
     //AJAX 
     res.render("../views/home.ejs", { selectedArts: allArts, exhibitions: highlightedExhibitions, galleryAPI: imagesURLs});
 };

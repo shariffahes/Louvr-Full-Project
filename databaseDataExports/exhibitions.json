@@ -11,16 +11,16 @@
   "startDate": {
     "$date": "2019-12-31T22:00:00Z"
   },
-  "thumbNail": "hello",
   "totalRegistered": 20,
-  "roomLocation": "upstairs"
+  "roomLocation": "upstairs",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition1",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition1"
 },{
   "_id": {
     "$oid": "61b0a806aa41016886909f0f"
   },
   "title": "sharif",
   "slogan": "i am sharif",
-  "thumbNail": "sharif",
   "startDate": {
     "$date": "2020-04-03T21:00:00Z"
   },
@@ -29,5 +29,41 @@
   },
   "price": 10,
   "totalRegistered": 200,
-  "roomLocation": "downstariss"
+  "roomLocation": "downstariss",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition2",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition2"
+},{
+  "_id": {
+    "$oid": "61b0f6601c27feffd3746480"
+  },
+  "title": "pero",
+  "slogan": "history that talks",
+  "startDate": {
+    "$date": "2022-01-08T22:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-02-07T22:00:00Z"
+  },
+  "price": 44.5,
+  "totalRegistered": 10,
+  "roomLocation": "101",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition3",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition3"
+},{
+  "_id": {
+    "$oid": "61b0f7261c27feffd3746481"
+  },
+  "title": "History",
+  "slogan": "The past in present",
+  "startDate": {
+    "$date": "2022-03-02T22:00:00Z"
+  },
+  "endDate": {
+    "$date": "2022-09-08T21:00:00Z"
+  },
+  "price": 22.8,
+  "totalRegistered": 20,
+  "roomLocation": "101",
+  "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition4",
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition4"
 }]

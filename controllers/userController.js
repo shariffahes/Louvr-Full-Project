@@ -47,7 +47,7 @@ const authenticatUser = async (req,res) => {
             return;
         }
         if(result) {
-            console.log("correct");
+            res.redirect("")
         }else{
             console.log("incorrect");
         }
