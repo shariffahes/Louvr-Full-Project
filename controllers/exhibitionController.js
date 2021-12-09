@@ -12,20 +12,22 @@ const main = async (req,res) => {
     const allArts = await SelectedArts.find({});
     const highlightedExhibitions = await Exhibition.find({}).limit(3);
 
-    const url = "https://collectionapi.metmuseum.org/public/collection/v1/objects"
+    const url = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=painting&departmentIds=11"
     const responseIDs = await got(url);
     const responseJSON = JSON.parse(responseIDs.body);
     const IDS = responseJSON.objectIDs;
-    // console.log(IDS);
+    const max = responseJSON.total-1;
+    console.log(max);
     const imagesResults = [];
     
-    for(var i=0;i<8;i++){
-        const ran = Math.floor((Math.random()*4000+500));
+    for(var i=0;i<9;i++){
+        const ran = Math.floor((Math.random()*max+0));
         const id = IDS[ran];
          const tempURL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
          const responseURL = await got(tempURL);
          const responseURLJSON = JSON.parse(responseURL.body);
          const imageAPIs = responseURLJSON.primaryImage;
+         console.log(imageAPIs);
          if(imageAPIs!=''){
             imagesResults[i]=imageAPIs;
          }else{
