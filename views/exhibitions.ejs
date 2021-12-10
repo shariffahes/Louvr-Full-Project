@@ -10,7 +10,7 @@
 
   </head>
   <body>
-    <header><%- include("../public/partials/navBar.html") %></header>
+    <header><%-include("../views/navBar.ejs",(loggedIn))%></header>
     <section>
       <div class="grid-container">  
         <% for(var i=0; i < data.length; i++) { %>

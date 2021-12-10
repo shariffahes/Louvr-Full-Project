@@ -46,7 +46,7 @@
     background-image: linear-gradient(
       rgba(0, 0, 0,0.3), 
       rgba(0, 0, 0, 0.3)
-    ), url(./assets/images/louvre-museum-paris-france.jpg);
+    ), url(louvre-museum-paris-france.jpg);
     justify-content: space-between;
     align-items: center;
     padding: 15px;

@@ -1,13 +1,13 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const getImageURL = require("../imageKit");
+var session= require("../session");
 const saltRounds = 8;
 
-const login =  (_,res) => {
-    res.render("../views/user.ejs",{login: true});
+const login =  (req,res) => {
+    res.render("../views/user.ejs",{logInPage: true,loggedIn: session.getSession()});
 };
 const signUp = (_,res) => {
-    res.render("../views/user.ejs", {login: false, signup: true });
+    res.render("../views/user.ejs", {logInPage: false,loggedIn: session.getSession(), signup: true });
 };
 const createUser = async (req,_) => {
     const extractedData = req.body;
@@ -47,7 +47,9 @@ const authenticatUser = async (req,res) => {
             return;
         }
         if(result) {
-            res.redirect("")
+            req.session.loggedIn = true;
+            session.setSession(req.session);
+            res.redirect("/");
         }else{
             console.log("incorrect");
         }
@@ -57,4 +59,9 @@ const authenticatUser = async (req,res) => {
    }
 };
 
-module.exports = {login,signUp, createUser, authenticatUser};
+const signout = (req,res) => {
+    req.session.loggedIn = false;
+    session.setSession(req.session);
+    res.redirect("/");
+}
+module.exports = {login,signUp, createUser, authenticatUser, signout};

@@ -9,7 +9,7 @@
     <base href="http://localhost:8081">
   </head>
   <body>
-    <header><%- include("../public/partials/navBar.html") %></header>
+    <header><%- include("../views/navBar.ejs",(loggedIn)) %></header>
     <section>
       <div class="main">
         <div class="first-section" >
@@ -53,9 +53,10 @@
         <div class="gallery-section">
           <h1 class="section-header-title">Explore Gallery</h1>
           <div class="gallery-container">
-            <% for(var i=1; i <= galleryAPI.length; i++) { %>
-            <div class="gallery-item" id="item<%=i%>" style="background-image:url(<%=galleryAPI[i-1]%>)"></div>
-            <% }%>
+       <% for(var i=1; i <= 8; i++) { %> 
+            <div class="gallery-item" id="item<%=i%>">
+            </div>
+          <%}%> 
           </div>
         </div>
 
@@ -115,5 +116,6 @@
       </div>
     </section>
     <footer><%- include("../public/partials/footer.html")%></footer>
+    <script src="homeScript.js"></script>
   </body>
 </html>

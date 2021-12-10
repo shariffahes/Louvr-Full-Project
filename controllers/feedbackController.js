@@ -1,6 +1,6 @@
 const Feedback = require("../models/Feedback");
 
-const feedbackPost = async (req, _) => {
+const feedbackPost = async (req, res) => {
   const extractedData = req.body;
   const feedbackToInsert = new Feedback({
     firstName: extractedData.firstName,
@@ -14,6 +14,7 @@ const feedbackPost = async (req, _) => {
     .save()
     .then(() => {
       console.log("successful");
+      res.redirect("/about-us");
     })
     .catch((err) => {
       console.log(err);

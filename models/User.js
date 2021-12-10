@@ -10,6 +10,7 @@ const UserSchema = new Schema({
     password: String,
     memberShip: String,
     credits: Number,
+    lastLogin: Date,
     dateOfBirth: Date
 });
 

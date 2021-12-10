@@ -11,13 +11,24 @@
         </tr>
         <tr>
             <td><a href="http://localhost:8081/exhibition">Exhibition</a></td>
+            <%console.log(loggedIn)%>
+            <%if(!loggedIn){%>
             <td><a href="http://localhost:8081/user">Login</a></td>
+            <%}else{%>
+            <td><a href="http://localhost:8081/user">Sign out</a></td>
+            <%}%>
         </tr>
     </table>
     <nav>
         <a href="http://localhost:8081/">Home</a>
         <a href="http://localhost:8081/visit">Visit</a>
         <a href="http://localhost:8081/exhibition">Exhibition</a>
-        <a href="http://localhost:8081/user">Login</a>
+
+        <%console.log(loggedIn)%>
+            <%if(!loggedIn){%>
+                <a href="http://localhost:8081/user">Login</a>
+            <%}else{%>
+                <a href="http://localhost:8081/user/signout">Sign out</a>
+            <%}%>
     </nav>
 </div>

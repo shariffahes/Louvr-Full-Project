@@ -1,5 +1,5 @@
 const express = require("express");
-const multer = require("multer");
+const session = require("express-session");
 const path = require("path");
 const homeRouter = require("./routes/home");
 const exhibitionRouter = require("./routes/exhibition");
@@ -8,6 +8,8 @@ const visitRouter = require("./routes/visit");
 const user = require("./routes/user");
 
 const mongoose = require("mongoose");
+
+
 mongoose.connect("mongodb://localhost/Louvre")
     .then(() => {
         console.log("connected to the db.");
@@ -16,10 +18,16 @@ mongoose.connect("mongodb://localhost/Louvre")
     });
 const app = express();
 
+app.use(session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true,
+}));
+
 app.set('views', path.join(__dirname, '/views'));
 app.set("view engine","ejs");
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
 
 app.use("/",homeRouter);
 app.use("/exhibition", exhibitionRouter);
@@ -27,10 +35,11 @@ app.use("/visit", visitRouter);
 app.use("/about-us", aboutUsRouter);
 app.use("/user",user);
 
-app.use(express.static(__dirname + "/public/html"));
-app.use(express.static(__dirname + "/public/styles"));
-app.use(express.static(__dirname + "/public/fonts"));
-app.use(express.static(__dirname + "/public/images"));
+app.use(express.static(path.join(__dirname ,"public/html")));
+app.use(express.static(path.join(__dirname, "public/styles")));
+app.use(express.static(path.join(__dirname, "public/images")));
+app.use(express.static(path.join(__dirname, "public/fonts")));
+app.use(express.static(path.join(__dirname, "public/scripts")));
 
 app.use((_,res) => {
     res.status(404).sendFile(__dirname+"/public/html/404.html");

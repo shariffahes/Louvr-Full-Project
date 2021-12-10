@@ -12,10 +12,10 @@
 
 <body>
 <header>
-<%-include("../public/partials/navBar.html")%>
+<%-include("../views/navBar.ejs",(loggedIn))%>
 </header>
 <section>
-<%if(login) {%>
+<%if(logInPage) {%>
     <div class="user-page">
         <h1> Welcome Back...</h1>
         <div class="flex-user">
@@ -33,7 +33,7 @@
             </form>
         </div>
     </div>
-    <%} else if(signup){ %>
+    <%} else if(!logInPage){ %>
     <div class="user-page">
         <h1>Register</h1>
         <div class="flex-user">
