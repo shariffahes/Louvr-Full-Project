@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const {Schema} = mongoose;
-const Feedback = new Schema({
+const FeedbackScheme = new Schema({
     firstName: String,
     lastName: String,
     email: String,
@@ -9,6 +9,6 @@ const Feedback = new Schema({
     description: String
 });
 
-const Feedback = mongoose.model("user",Feedback);
+const Feedback = mongoose.model("feedback",FeedbackScheme);
 module.exports = Feedback;
 
