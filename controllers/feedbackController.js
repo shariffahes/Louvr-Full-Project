@@ -1,14 +1,15 @@
 const Feedback = require("../models/Feedback");
 
-const feedbackPost = (req, _) => {
+const feedbackPost = async (req, _) => {
   const extractedData = req.body;
   const feedbackToInsert = new Feedback({
     firstName: extractedData.firstName,
-    lastName: extractedData.lastName,
-    email: extractedData.email,
-    phonenum: extractedData.phone,
-    desacription: extractedData.feedback,
+     lastName: extractedData.lastName,
+     email: extractedData.email,
+     phonenum: extractedData.phone,
+     description: extractedData.feedback
   });
+
   feedbackToInsert
     .save()
     .then(() => {

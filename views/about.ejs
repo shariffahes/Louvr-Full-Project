@@ -30,15 +30,15 @@
                 <form method="POST" action="http://localhost:8081/about-us/feedback" 
                 enctype="application/json>">
                     <label for="firstName">First Name: *</label>
-                    <input type="text" id="firstName" required placeholder="eg. Sharif" />
+                    <input type="text" id="firstName" name="firstName" required placeholder="eg. Sharif" />
                     <label for="lastName">Last Name: *</label>
-                    <input type="text" id="lastName" required placeholder="eg. Fahes" />
+                    <input type="text" id="lastName" name="lastName" required placeholder="eg. Fahes" />
                     <label for="email">Email: </label>
-                    <input type="email" id="email" placeholder="eg. Sharif" />
+                    <input type="email" id="email" name="email" placeholder="eg. Sharif" />
                     <label for="phone">Phone nb: </label>
-                    <input type="tel" id="phone" placeholder="eg. 70249036" />
+                    <input type="tel" id="phone" name="phone" placeholder="eg. 70249036" />
                     <label for="feedback">Feedback: *</label>
-                    <textarea id="feedback" required style="height: 100px; width: 100%;" placeholder="Your Feedback"></textarea>
+                    <textarea id="feedback" name="feedback" required style="height: 100px; width: 100%;" placeholder="Your Feedback"></textarea>
                     <input type="submit" value="submit" />
                 </form>
             </div>
