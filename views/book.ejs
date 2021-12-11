@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booking</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/booking.css">
-</head>
-<body>
-    <header>
-        <%- include("../views/navBar.ejs",(loggedIn)) %>
-    </header>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/booking.css" />
+  </head>
+  <body>
+    <header><%- include("../views/navBar.ejs",(loggedIn)) %></header>
     <section>
     
 <div class="first-section">
@@ -23,11 +21,27 @@
     <input value="<%=userInfo%>" id="userInfo" hidden></div>
     <form>
           <label for="name"><b>Full Name</b></label>
-          <input type="text" placeholder="Enter Your Full Name" name="name" id="name">
+          <input
+            type="text"
+            placeholder="Enter Your Full Name"
+            name="name"
+            id="name"
+            value="<%=%>"
+            readonly
+          /> 
+          <br /><br />
 
           <label for="email"><b>Email</b></label>
-          <input type="email" placeholder="Enter Email" name="email" id="email">
-          
+          <input
+            type="email"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+            value="<%=%>"
+            readonly
+          />
+          <br /><br />
+
           <label><b>Enter Tour Month</b></label>
           <select id="month" name="month">
             <option>Select Month</option>
@@ -43,10 +57,11 @@
             <option value="10">October</option>
             <option value="11">November</option>
             <option value="12">December</option>
-        </select>
+          </select>
+          <br /><br />
 
-        <label><b>Enter Tour Day</b></label>
-        <select id="day" name="day">
+          <label><b>Enter Tour Day</b></label>
+          <select id="day" name="day">
             <option>Select Day</option>
             <option value="01">01</option>
             <option value="02">02</option>
@@ -79,32 +94,36 @@
             <option value="29">29</option>
             <option value="30">30</option>
             <option value="31">31</option>
-        </select>
-        <div class="counter">
-            <label for="counting">Please Select Number Of Tickets: </label>
-            <button type="button" class="cbutton" onclick="increment()">+</button>   
-            <h2 id="counting"></h2> 
-            <button type="button" class="cbutton" onclick="decrement()">-</button>
-        </div>
+          </select>
+          <br /><br />
 
-        <div class="counter">
+          <div class="counter">
+            <label for="counting">Please Select Number Of Tickets: </label>
+            <button type="button" class="cbutton" onclick="increment()">
+              +
+            </button>
+            <h2 id="counting"></h2>
+            <button type="button" class="cbutton" onclick="decrement()">
+              -
+            </button>
+          </div>
+
+          <div class="counter">
             <label for="counting">Your Total Is: </label>
             <h2 id="total"></h2>
             <label for="counting">$</label>
-        </div>
+          </div>
 
-        <div class="counter">
+          <div class="counter">
             <label for="counting">Tickets left for the day: </label>
             <h2 id="left">150</h2>
-        </div>
-      </form>
-    </div>
+          </div>
+        </form>
+      </div>
     </section>
 
     <footer>
-        <footer>
-            <%- include("../public/partials/footer.html")%>
-        </footer>
+      <footer><%- include("../public/partials/footer.html")%></footer>
     </footer>
 
     <script> 
