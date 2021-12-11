@@ -33,7 +33,7 @@
   "roomLocation": "downstariss",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition2",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition2",
-  "seatsAvailable": "100"
+  "seatsAvailable": "500"
 },{
   "_id": {
     "$oid": "61b0f6601c27feffd3746480"
