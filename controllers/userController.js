@@ -9,7 +9,7 @@ const login =  (req,res) => {
 const signUp = (_,res) => {
     res.render("../views/user.ejs", {logInPage: false,loggedIn: session.getSession(), signup: true });
 };
-const createUser = async (req,_) => {
+const createUser = async (req,res) => {
     const extractedData = req.body;
     const userToInsert = new User({
         firstName: extractedData.fName,
@@ -30,7 +30,8 @@ const createUser = async (req,_) => {
         userToInsert.password = hashedPass;
         userToInsert.save()
                     .then( () => {
-                        console.log("successful")
+                        console.log("successful");
+                        res.redirect("/user/login");
                     }).catch(err => {
                         console.log(err);
                     });
@@ -48,7 +49,8 @@ const authenticatUser = async (req,res) => {
             return;
         }
         if(result) {
-            req.session.loggedIn = true;
+            req.session.loggedIn = isAccountValid._id;
+            console.log(req.session);
             session.setSession(req.session);
             console.log("correct");
             res.redirect("/");

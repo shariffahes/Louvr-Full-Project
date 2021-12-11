@@ -21,4 +21,9 @@ const main = async (req, res) => {
   });
 };
 
+// const booking = (req,res) => {
+//   const exhibition = Exhibition.findById({ _id = req.params.id});
+//   console.log(exhibition);
+// };
+
 module.exports = { index, main };

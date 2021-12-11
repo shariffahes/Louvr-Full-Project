@@ -5,12 +5,10 @@ const UserSchema = new Schema({
     firstName: String,
     lastName: String,
     userName: String,
-    profile: String,
     email: String,
     password: String,
-    memberShip: String,
     credits: Number,
-    lastLogin: Date,
+    registeredExhibitions: [String],
     dateOfBirth: Date
 });
 
