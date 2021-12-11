@@ -15,7 +15,7 @@
   "roomLocation": "upstairs",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition1",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition1",
-  "seatsAvailable": "100"
+  "seatsAvailable": 100
 },{
   "_id": {
     "$oid": "61b0a806aa41016886909f0f"
@@ -33,7 +33,7 @@
   "roomLocation": "downstariss",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition2",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition2",
-  "seatsAvailable": "500"
+  "seatsAvailable": 500
 },{
   "_id": {
     "$oid": "61b0f6601c27feffd3746480"
@@ -51,7 +51,7 @@
   "roomLocation": "101",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition3",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition3",
-  "seatsAvailable": "150"
+  "seatsAvailable": 150
 },{
   "_id": {
     "$oid": "61b0f7261c27feffd3746481"
@@ -69,7 +69,7 @@
   "roomLocation": "101",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition4",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition4",
-  "seatsAvailable": "40"
+  "seatsAvailable": 40
 },{
   "_id": {
     "$oid": "61b256192e098af5a7682328"
@@ -87,7 +87,7 @@
   "roomLocation": "007",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition7",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition7",
-  "seatsAvailable": "50"
+  "seatsAvailable": 50
 },{
   "_id": {
     "$oid": "61b258a02e098af5a7682329"
@@ -105,7 +105,7 @@
   "roomLocation": "1007",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition5",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition5",
-  "seatsAvailable": "120"
+  "seatsAvailable": 120
 },{
   "_id": {
     "$oid": "61b2590a2e098af5a768232a"
@@ -123,7 +123,7 @@
   "roomLocation": "2101",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition6",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition6",
-  "seatsAvailable": "250"
+  "seatsAvailable": 250
 },{
   "_id": {
     "$oid": "61b2595a2e098af5a768232b"
@@ -141,7 +141,7 @@
   "roomLocation": "001",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition8",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition8",
-  "seatsAvailable": "500"
+  "seatsAvailable": 500
 },{
   "_id": {
     "$oid": "61b25ceb2e098af5a768232c"
@@ -159,7 +159,7 @@
   "roomLocation": "504",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition10",
   "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition10",
-  "seatsAvailable": "110"
+  "seatsAvailable": 110
 },{
   "_id": {
     "$oid": "61b25d262e098af5a768232d"
@@ -176,5 +176,6 @@
   "totalRegistered": 700,
   "roomLocation": "1001",
   "largePreview": "https://ik.imagekit.io/zdphhwaxuat/exhibition9",
-  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition9"
+  "smallPreview": "https://ik.imagekit.io/zdphhwaxuat/tr:h-300,w-400/exhibition9",
+  "seatsAvailable": 1000
 }]
