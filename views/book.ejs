@@ -11,24 +11,37 @@
   <body>
     <header><%- include("../views/navBar.ejs",(loggedIn)) %></header>
     <section>
-    
-<div class="first-section">
-    <h3 class="main-title">The booking page</h3>
-    <p style="color: gold">Let's book your ticket</p>
-</div>
-<div class="main">
-    <input value="<%=exhibitionInfo.price%>" id="price" hidden></div>
-    <input value="<%=userInfo%>" id="userInfo" hidden></div>
-    <form>
+      <div class="first-section">
+        <h3 class="main-title">The booking page</h3>
+        <p style="color: gold">Let's book your ticket</p>
+      </div>
+      <div class="main">
+        <form
+          method="POST"
+          action="http://localhost:8081/booking/buyTicket"
+          enctype="application/json>"
+        >
+          <input
+            value="<%=exhibitionInfo.price%>"
+            id="exhibitionInfoPrice"
+            hidden
+          />
+          <input value="<%=userInfo%>" id="userInfo" hidden />
+          <input
+            value="<%=exhibitionInfo.seatsAvailable%>"
+            id="userInfoSeatsAvailable"
+            hidden
+          />
+
           <label for="name"><b>Full Name</b></label>
           <input
             type="text"
             placeholder="Enter Your Full Name"
             name="name"
             id="name"
-            value="<%=%>"
+            value="<%=userInfo.firstName%> <%=userInfo.lastName%>"
             readonly
-          /> 
+          />
           <br /><br />
 
           <label for="email"><b>Email</b></label>
@@ -37,65 +50,22 @@
             placeholder="Enter Email"
             name="email"
             id="email"
-            value="<%=%>"
+            value="<%=userInfo.email%>"
             readonly
           />
           <br /><br />
 
-          <label><b>Enter Tour Month</b></label>
-          <select id="month" name="month">
-            <option>Select Month</option>
-            <option value="01">January</option>
-            <option value="02">February</option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08">August</option>
-            <option value="09">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
+          <label for="credits"><b>Wallet</b></label>
+          <input
+            type="text"
+            placeholder="credits"
+            name="credits"
+            id="credits"
+            value="<%=userInfo.credits%>"
+            readonly
+          />
           <br /><br />
-
-          <label><b>Enter Tour Day</b></label>
-          <select id="day" name="day">
-            <option>Select Day</option>
-            <option value="01">01</option>
-            <option value="02">02</option>
-            <option value="03">03</option>
-            <option value="04">04</option>
-            <option value="05">05</option>
-            <option value="06">06</option>
-            <option value="07">07</option>
-            <option value="08">08</option>
-            <option value="09">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-            <option value="28">28</option>
-            <option value="29">29</option>
-            <option value="30">30</option>
-            <option value="31">31</option>
-          </select>
-          <br /><br />
+          <h1 style="text-align: center">Event Name</h1>
 
           <div class="counter">
             <label for="counting">Please Select Number Of Tickets: </label>
@@ -126,60 +96,56 @@
       <footer><%- include("../public/partials/footer.html")%></footer>
     </footer>
 
-    <script> 
-    let data = 0;
-        let total = 0;
-        let left = 150;
+    <script>
+      let data = 0;
+      let total = 0;
+      let left = document.getElementById("userInfoSeatsAvailable").value;
+      let price = document.getElementById("exhibitionInfoPrice").value;
+      let wallet = document.getElementById("credits").value;
+      document.getElementById("counting").innerText = data;
 
-        document.getElementById("counting").innerText = data;
-        console.log("ss");
-        console.log(document.getElementById("price").value);
-        console.log(document.getElementById("userInfo").value);
+      function increment() {
+        data = data + 1;
+        if (data <= 10) {
+          document.getElementById("counting").innerText = data;
+        } else {
+          data = 10;
+          document.getElementById("counting").innerText = data;
+          document.getElementById("counting").style.color = "red";
+        }
+        calc();
+      }
 
-        function increment() {
-            if (document.getElementById("month").value != "Select Month"
-                && document.getElementById("day").value != "Select Day") {
-                data = data + 1;
-                if (data <= 10) {
-                    document.getElementById("counting").innerText = data;
-                }
-
-                else {
-                    data = 10;
-                    document.getElementById("counting").innerText = data;
-                    document.getElementById("counting").style.color = 'red';
-                }
-                calc();
-            }
+      function decrement() {
+        data = data - 1;
+        if (data >= 0) {
+          document.getElementById("counting").style.color = "black";
+          document.getElementById("counting").innerText = data;
+        } else {
+          data = 0;
+          document.getElementById("counting").innerText = data;
         }
 
-        function decrement() {
-            if (document.getElementById("month").value != "Select Month"
-                && document.getElementById("day").value != "Select Day") {
-                data = data - 1;
-                if (data >= 0) {
-                    document.getElementById("counting").style.color = 'black';
-                    document.getElementById("counting").innerText = data;
-                }
-                else {
-                    data = 0;
-                    document.getElementById("counting").innerText = data;
-                }
+        calc();
+      }
 
-                calc();
-            }
+      function calc() {
+        total = data * price;
+        document.getElementById("credits").value=( wallet - total);
+        if(document.getElementById("credits").value<0){
+            document.getElementById("credits").style.color = "red";
+        }else{
+            document.getElementById("credits").style.color = "black";
         }
 
-        function calc() {
-            total = data * 17;
-            document.getElementById("total").innerText = total;
-            leftTickets();
-        }
+        document.getElementById("total").innerText = total;
+        leftTickets();
+      }
 
-        function leftTickets() {
-            left = 150 - data;
-            document.getElementById("left").innerText = left;
-        }
+      function leftTickets() {
+        left = 150 - data;
+        document.getElementById("left").innerText = left;
+      }
     </script>
-</body>
+  </body>
 </html>
