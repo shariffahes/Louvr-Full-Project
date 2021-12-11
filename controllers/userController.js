@@ -3,15 +3,15 @@ const bcrypt = require("bcrypt");
 const session= require("../session");
 const saltRounds = 8;
 
-const login =  (req,res) => {
-    res.render("../views/user.ejs",{logInPage: true,loggedIn: session.getSession()});
+const login =  (_,res) => {
+    res.render("../views/user.ejs",{logInPage: true, loggedIn: session.getSession().loggedIn});
 };
 const signUp = (_,res) => {
-    res.render("../views/user.ejs", {logInPage: false,loggedIn: session.getSession(), signup: true });
+    res.render("../views/user.ejs", {logInPage: false, loggedIn: session.getSession().loggedIn, signup: true });
 };
 const createUser = async (req,res) => {
     const extractedData = req.body;
-    console.log(extractedData);
+
     const userToInsert = new User({
         firstName: extractedData.fname,
         lastName: extractedData.lname,
@@ -25,23 +25,24 @@ const createUser = async (req,res) => {
    
     bcrypt.hash(req.body.password, saltRounds, (err, hashedPass) => {
         if(err) {
-            console.log(err);
+            console.log("error in hashing. ERR"+err);
             return;
         }
         userToInsert.password = hashedPass;
         userToInsert.save()
                     .then( () => {
-                        console.log("successful");
+                        console.log("successful insertion");
                         res.redirect("/user/login");
                     }).catch(err => {
-                        console.log(err);
+                        res.redirect("/user/signup");
+                        console.log("An error occured during signing up");
                     });
                 });
 };
 const authenticatUser = async (req,res) => {
    const credentialsInfo = req.body;
+   try{
    const isAccountValid = await User.findOne({ email: credentialsInfo.email},'email password');
-    console.log("correct");
    if(isAccountValid) {
     const pass = isAccountValid.password;
     bcrypt.compare(credentialsInfo.password,pass,(err,result) => {
@@ -51,21 +52,25 @@ const authenticatUser = async (req,res) => {
         }
         if(result) {
             req.session.loggedIn = isAccountValid._id;
-            console.log(req.session);
             session.setSession(req.session);
-            console.log("correct");
+            console.log("password correct");
             res.redirect("/");
         }else{
-            console.log("incorrect");
+            console.log("password incorrect");
+            res.redirect("/user/login");
         }
     })
    }else {
+       res.redirect("/user/login");
        console.log("the email is incorrect");
    }
+}catch(err) {
+       console.log("an error has occured. ERR:" + err);
+}
 };
 
 const signout = (req,res) => {
-    req.session.loggedIn = false;
+    req.session.loggedIn = undefined;
     session.setSession(req.session);
     res.redirect("/");
 }

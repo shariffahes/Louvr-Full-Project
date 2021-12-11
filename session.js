@@ -1,4 +1,4 @@
-var session = null;
+var session = {};
 
 const getSession = () => {
     return session;

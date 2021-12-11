@@ -89,6 +89,23 @@ position: relative;
     font-size: 19px;
 }
 
+.status {
+    position: absolute;
+    color: white;
+    border-radius: 22px;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 60%;
+    background-color: green;
+    padding: 7px;
+}
+
+.unregister {
+     background-color: red !important;
+}
+
 @media screen and (max-width: 600px) {
     .grid-container {
         grid-template-columns: auto;

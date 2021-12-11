@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     email: String,
     password: String,
     credits: Number,
-    registeredExhibitions: [String],
+    registeredExhibitions: [mongoose.Types.ObjectId],
     dateOfBirth: Date
 });
 
