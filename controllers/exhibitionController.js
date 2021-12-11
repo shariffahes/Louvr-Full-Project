@@ -34,7 +34,7 @@ const main = async (_, res) => {
 const booking = async (req,res) => {
   const id = req.params.id;
   if (mongoose.Types.ObjectId.isValid(id)) {
-    const exhibition = await Exhibition.findById(id, "price");
+    const exhibition = await Exhibition.findById(id, "price seatsAvailable");
     const user = await User.findById(session.getSession().loggedIn,"firstName lastName email credits");
     res.render("../views/book.ejs", { loggedIn: session.getSession().loggedIn, userInfo: user, exhibitionInfo: exhibition });
   }else{
