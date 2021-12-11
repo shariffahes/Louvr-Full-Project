@@ -18,8 +18,6 @@ const createUser = async (req,res) => {
         userName: extractedData.userName,
         email: extractedData.email,
         password: extractedData.password,
-        memberShip: "standard",
-        credits: 0,
         dateOfBirth: extractedData.birthDate
     });
    

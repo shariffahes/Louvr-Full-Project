@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const index = async (req, res) => {
   const loaded = parseInt(req.query.loaded ?? 0);
-  const exhibitions = await Exhibition.find({}).skip(loaded).limit(2);
+  const exhibitions = await Exhibition.find({}).skip(loaded).limit(4);
 
   const isLoggedIn = session.getSession().loggedIn;
   let result;
@@ -14,7 +14,7 @@ const index = async (req, res) => {
 
   if (result) result = result.registeredExhibitions
   else result = [];
-
+  console.log(result);
   if(loaded > 0) res.send(exhibitions);
   else res.render("../views/exhibitions.ejs", { data: exhibitions, loggedIn: session.getSession().loggedIn, exhibitionsRegistered: Array.from(result)});
 };
@@ -34,7 +34,7 @@ const main = async (_, res) => {
 const booking = async (req,res) => {
   const id = req.params.id;
   if (mongoose.Types.ObjectId.isValid(id)) {
-    const exhibition = await Exhibition.findById(id, "price seatsAvailable");
+    const exhibition = await Exhibition.findById(id, "title price seatsAvailable");
     const user = await User.findById(session.getSession().loggedIn,"firstName lastName email credits");
     res.render("../views/book.ejs", { loggedIn: session.getSession().loggedIn, userInfo: user, exhibitionInfo: exhibition });
   }else{
@@ -45,8 +45,14 @@ const booking = async (req,res) => {
 
 const buyTicket = async (req,res) => {
   const id = req.body.id;
-  const user = await User.findById(id);
-  s
+  const userID = session.getSession().loggedIn;
+  const user = await User.findById(userID);
+  const userExhibitions = user.registeredExhibitions ?? [];
+  if(userExhibitions.indexOf(id) === -1)  userExhibitions.push(id);
+  await Exhibition.findByIdAndUpdate(id, { seatsAvailable: req.body.remainingTickets});
+  console.log(userExhibitions);
+  await User.findByIdAndUpdate(userID, { credits: req.body.credits, registeredExhibitions: userExhibitions});
+  res.redirect("/exhibition");
 }; 
 
 const unregister = async (req,res) => {
@@ -54,7 +60,7 @@ const unregister = async (req,res) => {
   const user = await User.findById(session.getSession().loggedIn);
   const registered = user.registeredExhibitions;
   const updatedRegister = registered.filter((elem) => !elem.equals(Id) );
-  await User.updateOne({ registeredExhibitions: updatedRegister});
+  await User.findByIdAndUpdate(session.getSession().loggedIn,{ registeredExhibitions: updatedRegister});
   res.redirect("/exhibition");
 };
 

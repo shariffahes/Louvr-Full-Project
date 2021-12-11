@@ -7,6 +7,7 @@
     <title>Booking</title>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/booking.css" />
+    <base href="http://localhost:8081">
   </head>
   <body>
     <header><%- include("../views/navBar.ejs",(loggedIn)) %></header>
@@ -15,10 +16,17 @@
         <h3 class="main-title">The booking page</h3>
         <p style="color: gold">Let's book your ticket</p>
       </div>
+      <%if(!userInfo){%>
+        <a href="/user/login" class="redirectLink">
+        <div class="error">
+          <h3>You must login first</h3>
+        </div> 
+        </a>
+      <%}else{%>
       <div class="main">
         <form
           method="POST"
-          action="http://localhost:8081/booking/buyTicket"
+          action="/booking/buyTicket"
           enctype="application/json>"
         >
           <input
@@ -64,15 +72,16 @@
             value="<%=userInfo.credits%>"
             readonly
           />
+          <h6 class="warning" id="warning"></h6>
           <br /><br />
-          <h1 style="text-align: center">Event Name</h1>
+          <h1 style="text-align: center" class="exhibitionName"><%=exhibitionInfo.title%></h1>
 
           <div class="counter">
             <label for="counting">Please Select Number Of Tickets: </label>
             <button type="button" class="cbutton" onclick="increment()">
               +
             </button>
-            <h2 id="counting"></h2>
+            <h2 id="counting" ></h2>
             <button type="button" class="cbutton" onclick="decrement()">
               -
             </button>
@@ -80,71 +89,80 @@
 
           <div class="counter">
             <label for="counting">Your Total Is: </label>
-            <h2 id="total"></h2>
-            <label for="counting">$</label>
+            <h2 id="total"><%=exhibitionInfo.price%></h2>
+            <label for="counting">€</label>
           </div>
 
           <div class="counter">
             <label for="counting">Tickets left for the day: </label>
-            <h2 id="left">150</h2>
+            <h2 id="left"><%=exhibitionInfo.seatsAvailable%></h2>
           </div>
+          <input id="tickets" name="remainingTickets" value=<%=exhibitionInfo.seatsAvailable%> hidden/>
+          <input id="exhibitionID" name="id" value=<%=exhibitionInfo.id%> hidden/>
+          <input type="submit" value="buy ticket" class="button">
         </form>
       </div>
     </section>
-
+<%}%>
     <footer>
       <footer><%- include("../public/partials/footer.html")%></footer>
     </footer>
 
     <script>
-      let data = 0;
-      let total = 0;
+      
+      
       let left = document.getElementById("userInfoSeatsAvailable").value;
       let price = document.getElementById("exhibitionInfoPrice").value;
       let wallet = document.getElementById("credits").value;
+      let data = 1;
       document.getElementById("counting").innerText = data;
+      let total = price;
 
       function increment() {
         data = data + 1;
         if (data <= 10) {
           document.getElementById("counting").innerText = data;
+          calc(true);
         } else {
           data = 10;
           document.getElementById("counting").innerText = data;
           document.getElementById("counting").style.color = "red";
         }
-        calc();
+        
       }
 
       function decrement() {
         data = data - 1;
-        if (data >= 0) {
+        if (data >= 1) {
           document.getElementById("counting").style.color = "black";
           document.getElementById("counting").innerText = data;
+          calc()
         } else {
-          data = 0;
+          data = 1;
           document.getElementById("counting").innerText = data;
         }
-
-        calc();
       }
 
-      function calc() {
+      function calc(inc) {
         total = data * price;
         document.getElementById("credits").value=( wallet - total);
         if(document.getElementById("credits").value<0){
             document.getElementById("credits").style.color = "red";
+            document.getElementById("warning").innerHTML = "your wallet doesn't contain enough money. <br>The negative amount will be taken from your credit card"
         }else{
             document.getElementById("credits").style.color = "black";
         }
 
         document.getElementById("total").innerText = total;
-        leftTickets();
+        leftTickets(inc);
       }
 
-      function leftTickets() {
-        left = 150 - data;
+      function leftTickets(inc) {
+        if(inc) left -= 1;
+        else left += 1;
+
         document.getElementById("left").innerText = left;
+        document.getElementById("tickets").value = left;
       }
     </script>
   </body>

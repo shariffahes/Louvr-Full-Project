@@ -19,18 +19,19 @@
                 <%= data[i].title %>
               </h5>
                 
-                <%exhibitionsRegistered.forEach(element => {
-                    if(element.equals(data[i]._id)) {%>
+                <% for(var j=0;j<exhibitionsRegistered.length;j++){%>
+                    <%if((data[i]._id).equals(exhibitionsRegistered[j])){%>
                           <h2 class="status">registered</h2>
                           <input value="Unregister" type="button" class="button unregister" onclick="location.href='/unregisterExhibition/<%=data[i]._id%>';" />
+                          <%break;%>
                     <%}else{%>
                     <input value="Book Now" type="button" class="button" onclick="location.href='/booking/<%=data[i]._id%>';" />
                     <%}%>
-                <%})%>
-                <%if(exhibitionsRegistered.length==0){%>
-                      <input value="Book Now" type="button" class="button" onclick="location.href='/booking/<%=data[i]._id%>';" />
-                  <%}%>
-             
+                <%} 
+                if(exhibitionsRegistered.length === 0){%>
+                  <input value="Book Now" type="button" class="button" onclick="location.href='/booking/<%=data[i]._id%>';" />
+                <%}%>
+
           <div class="details">
             <p class="subtitle"><%= data[i].startDate.toLocaleString('default', {day: '2-digit',month: 'long', year: 'numeric' }); %> - 
               <%= data[i].endDate.toLocaleString('default', {day: '2-digit',month: 'long', year: 'numeric' }); %>
