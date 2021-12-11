@@ -44,6 +44,10 @@ position: relative;
     font-size: 19px;
 }
 
+.grid-item .button:hover {
+    background-color: 'tomato';
+}
+
 .grid-item .title {
     position: absolute;
     color: white;
@@ -74,6 +78,15 @@ position: relative;
     color: #fff;
     font-size: 14px;
     align-self: center;
+}
+.load-more {
+    display: inline-block;
+    width: 100%;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 19px;
 }
 
 @media screen and (max-width: 600px) {

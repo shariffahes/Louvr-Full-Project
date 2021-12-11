@@ -8,6 +8,7 @@
     <title>Log In</title>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/user.css" />
+    <base href="http://localhost:8081">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
     <div class="user-page">
         <h1> Welcome Back...</h1>
         <div class="flex-user">
-            <form class="forms" action="http://localhost:8081/user/authenticate" method="post" enctype="application/json">
+            <form class="forms" action="/user/authenticate" method="post" enctype="application/json">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" required placeholder="eg. john@mail.com" />
                 <br />
@@ -29,7 +30,9 @@
                 <input type="password" name="password" id="password" required placeholder="eg. your password" />
                 <br />
                 <br />
-                <input type="submit" class="button" value="login">
+                <input type="submit" class="button" value="login"> 
+                <br><br>
+                <a href="/user/signup" class="special-link">Don't have an account ? sign up<a>     
             </form>
         </div>
     </div>
@@ -37,7 +40,7 @@
     <div class="user-page">
         <h1>Register</h1>
         <div class="flex-user">
-            <form class="forms" method="POST" action="http://localhost:8081/user/create" 
+            <form class="forms" method="POST" action="/user/create" 
             enctype="application/json>">
                 <label for="fname">First Name</label>
                 <input type="text" name="fname" id="fname" required placeholder="eg. John" />
@@ -69,7 +72,9 @@
                 <br>
                 <br>
     
-            <input type="submit" class="button" value="Sign up">
+            <input type="submit" class="button" value="Sign up"> <br>
+            <br>
+            <a href="/user/login" class="special-link">You have an account? Log in<a></a>
             </form>
         </div>
     </div>

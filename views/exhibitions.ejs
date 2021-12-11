@@ -12,11 +12,11 @@
   <body>
     <header><%-include("../views/navBar.ejs",(loggedIn))%></header>
     <section>
-      <div class="grid-container">  
+      <div class="grid-container" id="exhibitions-list">  
         <% for(var i=0; i < data.length; i++) { %>
         <div class="grid-item" style="background-image: url(<%=data[i].largePreview%>);">
           <h5 class="title"><%= data[i].title %></h5>
-          <input value="Book Now" type="button" class="button" />
+          <input value="Book Now" type="button" class="button" onclick="location.href='/book';"/>
           <div class="details">
             <p class="subtitle"><%= data[i].startDate.toLocaleString('default', {day: '2-digit',month: 'long', year: 'numeric' }); %> - 
               <%= data[i].endDate.toLocaleString('default', {day: '2-digit',month: 'long', year: 'numeric' }); %>
@@ -25,8 +25,9 @@
         </div>
         <% } %>
       </div>
+        <input type="button" class="load-more input" id="loadMore" value="Load more exhibitions" onclick="onLoadMoreClick()"/>
     </section>
-
     <footer><%- include("../public/partials/footer.html")%></footer>
+    <script src="exhibitions.js"></script>
   </body>
 </html>

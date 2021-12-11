@@ -14,10 +14,9 @@
   opacity:1;
 }
 
-a {
-  color: #1e90ff;
+.main {
+  margin: 20px;
 }
-
 option {
     font-weight: normal;
     display: block;

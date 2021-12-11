@@ -3,8 +3,10 @@ const SelectedArts = require("../models/SelectedArts");
 const session = require("../session");
 
 const index = async (req, res) => {
-  const exhibitions = await Exhibition.find({});
-  res.render("../views/exhibitions.ejs", { data: exhibitions, loggedIn: session.getSession() });
+  const loaded = parseInt(req.query.loaded ?? 0);
+  const exhibitions = await Exhibition.find({}).skip(loaded).limit(2);
+  if(loaded > 0) res.send(exhibitions);
+  else res.render("../views/exhibitions.ejs", { data: exhibitions, loggedIn: session.getSession() });
 };
 
 const main = async (req, res) => {

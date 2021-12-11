@@ -37,3 +37,15 @@ label {
   box-shadow: 5px 5px 100px black;
   
 }
+
+.special-link {
+  color: black;
+}
+.special-link:hover {
+  color: blue;
+
+}
+.button {
+  width: 100%;
+  padding: 4px;
+}

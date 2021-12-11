@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-var session= require("../session");
+const session= require("../session");
 const saltRounds = 8;
 
 const login =  (req,res) => {
@@ -39,6 +39,7 @@ const createUser = async (req,_) => {
 const authenticatUser = async (req,res) => {
    const credentialsInfo = req.body;
    const isAccountValid = await User.findOne({ email: credentialsInfo.email},'email password');
+    console.log("correct");
    if(isAccountValid) {
     const pass = isAccountValid.password;
     bcrypt.compare(credentialsInfo.password,pass,(err,result) => {
@@ -49,6 +50,7 @@ const authenticatUser = async (req,res) => {
         if(result) {
             req.session.loggedIn = true;
             session.setSession(req.session);
+            console.log("correct");
             res.redirect("/");
         }else{
             console.log("incorrect");
