@@ -11,9 +11,10 @@ const signUp = (_,res) => {
 };
 const createUser = async (req,res) => {
     const extractedData = req.body;
+    console.log(extractedData);
     const userToInsert = new User({
-        firstName: extractedData.fName,
-        lastName: extractedData.lName,
+        firstName: extractedData.fname,
+        lastName: extractedData.lname,
         userName: extractedData.userName,
         email: extractedData.email,
         password: extractedData.password,

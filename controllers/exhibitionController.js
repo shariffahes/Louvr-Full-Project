@@ -1,6 +1,8 @@
 const Exhibition = require("../models/Exhibition");
 const SelectedArts = require("../models/SelectedArts");
+const User = require("../models/User");
 const session = require("../session");
+const mongoose = require("mongoose");
 
 const index = async (req, res) => {
   const loaded = parseInt(req.query.loaded ?? 0);
@@ -21,9 +23,15 @@ const main = async (req, res) => {
   });
 };
 
-// const booking = (req,res) => {
-//   const exhibition = Exhibition.findById({ _id = req.params.id});
-//   console.log(exhibition);
-// };
+const booking = async (req,res) => {
+  const id = req.params.id;
+  if (mongoose.Types.ObjectId.isValid(id)) {
+    const exhibition = await Exhibition.findById(id, "price");
+    const user = await User.findById(session.getSession().loggedIn,"firstName lastName email credits");
+    console.log(exhibition);
+    res.render("../views/book.ejs", { loggedIn: session.getSession(), userInfo: user, exhibitionInfo: exhibition });
+  }
+  
+};
 
-module.exports = { index, main };
+module.exports = { index, main, booking };

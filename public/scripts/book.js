@@ -3,6 +3,8 @@ let total = 0;
 let left = 150;
 
 document.getElementById("counting").innerText = data;
+console.log("ss");
+console.log(document.getElementById("price").name);
 
 function increment() {
     if (document.getElementById("month").value != "Select Month"
