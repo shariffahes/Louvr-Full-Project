@@ -100,7 +100,7 @@ const buyTicket = async (req,res) => {
   //add exhibition to registered only if this exhibition is not registered by user 
   if(userExhibitions.indexOf(id) === -1)  userExhibitions.push(id);
   await Exhibition.findByIdAndUpdate(id, { seatsAvailable: req.body.remainingTickets});
-  console.log(userExhibitions);
+
   await User.findByIdAndUpdate(userID, { credits: req.body.credits, registeredExhibitions: userExhibitions});
   }catch(error) {
     console.log(error);
