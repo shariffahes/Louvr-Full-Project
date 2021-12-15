@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const {Schema} = mongoose;
 
+//Schema of the exhibtion collection
 const ExhibitionSchema = new Schema({
     title: String,
     slogan: String,

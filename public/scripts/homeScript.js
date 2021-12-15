@@ -1,3 +1,4 @@
+//specified specific number of urls from the MET to request them 
 const imagesURLs = [
     "459062",
     "49112",
@@ -66,31 +67,43 @@ const imagesResults = [];
 
 const getImageURL = async () => {
 try {
+    //we need 8 images in the home page
     for (var i = 0; i < 8; i++) {
+        //keep choosing random values from the provided image ids
         const ran = Math.floor(Math.random() * imagesURLs.length);
         const ID = imagesURLs[ran];
+        //turn the image id to undefined when this id is chosen/
+        //prevemt duplication of images/
         imagesURLs[ran] = undefined;
-        console.log("ID"+ID);
+
+        //if ID is not undefined, will proceed
         if (ID) {
+            //the url of the met museum to get the info about a specific id.
             const tempURL = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${ID}`;
+            //wait till we get a response
             const responseURL = await fetch(tempURL);
+            //wait till the response is parse to json.
             const responseJSON = await responseURL.json();
+            //access the primaryImage field
             const imageAPIs = responseJSON.primaryImage;
+            //get which grid item in the main page and manipulate its background image to the url.
             document.getElementById("item" + (i + 1)).style.backgroundImage = `url(${imageAPIs})`;
 
-            console.log(imageAPIs);
+            //if the chosen id has image, then all is good/
+            //otherwise we have to repeat the process.
             if (imageAPIs != "") {
                 imagesResults[i] = imageAPIs;
 
             } else {
-                console.log("not found");
                 i--;
             }
         } else {
+            //the id is undefined (chosen previously) so repeat the process.
             i--;
         }
     }
 }catch (error) {
+    //catch any error thrown from the fetch request or parsing to json.
     console.log(error);
 }
 };

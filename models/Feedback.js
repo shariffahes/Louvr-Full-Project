@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
 const {Schema} = mongoose;
+
+//Schema of the exhibtion collection
 const FeedbackScheme = new Schema({
     firstName: String,
     lastName: String,
